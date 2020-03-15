@@ -1,21 +1,21 @@
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image
-} from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 import MyImage from './src/Component/MyImage';
+import { Provider } from 'react-redux';
+
+import store from './src/store/store';
 
 
 export default function App() {
 
 
   return ( 
-    <View style = {styles.container}>
-      <MyImage/>
-      <Text > Open up App.js to start working on your app! </Text>
-     </View>
+    <Provider store={store}>
+      <View style = {styles.container}>
+        <MyImage/>
+        <Text > Open up App.js to start working on your app! </Text>
+      </View>
+     </Provider>
   );
 }
 
